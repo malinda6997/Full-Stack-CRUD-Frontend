@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "../style.css";
 
 const UpdateContact = () => {
   const { id } = useParams();
@@ -36,38 +35,56 @@ const UpdateContact = () => {
   };
 
   return (
-    <div className="form-container">
-      <h2>Update Contact</h2>
-      <input
-        type="text"
-        name="firstName"
-        value={form.firstName}
-        onChange={handleChange}
-        placeholder="First Name"
-      />
-      <input
-        type="text"
-        name="lastName"
-        value={form.lastName}
-        onChange={handleChange}
-        placeholder="Last Name"
-      />
-      <input
-        type="text"
-        name="mobileNumber"
-        value={form.mobileNumber}
-        onChange={handleChange}
-        placeholder="Mobile Number"
-      />
-      <input
-        type="number"
-        name="age"
-        value={form.age}
-        onChange={handleChange}
-        placeholder="Age"
-      />
-      <button onClick={handleUpdate}>Update</button>
-      <button onClick={() => navigate("/view")}>Cancel</button>
+    <div className="h-screen w-screen flex items-center justify-center bg-gray-900">
+      <div className="w-full max-w-md p-8 rounded-2xl shadow-md bg-gray-800 text-white">
+        <h2 className="text-2xl font-bold mb-6 text-center">Update Contact</h2>
+
+        <input
+          type="text"
+          name="firstName"
+          value={form.firstName}
+          onChange={handleChange}
+          placeholder="First Name"
+          className="w-full mb-4 px-4 py-2 rounded-md border border-gray-500 bg-transparent focus:outline-none"
+        />
+        <input
+          type="text"
+          name="lastName"
+          value={form.lastName}
+          onChange={handleChange}
+          placeholder="Last Name"
+          className="w-full mb-4 px-4 py-2 rounded-md border border-gray-500 bg-transparent focus:outline-none"
+        />
+        <input
+          type="text"
+          name="mobileNumber"
+          value={form.mobileNumber}
+          onChange={handleChange}
+          placeholder="Mobile Number"
+          className="w-full mb-4 px-4 py-2 rounded-md border border-gray-500 bg-transparent focus:outline-none"
+        />
+        <input
+          type="number"
+          name="age"
+          value={form.age}
+          onChange={handleChange}
+          placeholder="Age"
+          className="w-full mb-6 px-4 py-2 rounded-md border border-gray-500 bg-transparent focus:outline-none"
+        />
+
+        <button
+          onClick={handleUpdate}
+          className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md mb-3"
+        >
+          Update
+        </button>
+        <button
+          onClick={() => navigate("/view")}
+          className="w-full bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   );
 };
